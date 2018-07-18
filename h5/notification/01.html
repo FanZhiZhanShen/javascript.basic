@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<input type="button" id="pop" value="pop" />
+
+	</body>
+
+</html>
+<script>
+	
+	pop.onclick = function() {
+		
+		var n = new Notification("html5 , notification", {
+			icon: 'boot-logo.jpg',
+			body: 'content'
+		});
+		
+		n.onshow = function() {
+			setTimeout(function(){ n.close() } ,  3000)
+		}
+		
+		n.onclick = function() {
+			window.location.href = "http://www.baidu.com"
+		}
+		
+		n.onclose = function() {
+			//关闭的时候想做点什么 , 可以写在这里 . 
+		}
+		
+	}
+</script>

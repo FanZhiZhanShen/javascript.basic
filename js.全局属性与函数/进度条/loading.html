@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style>
+			
+			#wrap {
+				height: 40px;
+				width: 300px;
+				background-color: gainsboro;
+			}
+			
+			#loading {
+				height: 40px;
+				width: 0px;
+				background-color:lightseagreen;
+				line-height: 40px; text-align: center; color: whitesmoke;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		
+		<div id="wrap">
+			<div id="loading">0%</div>
+		</div>
+		
+	</body>
+</html>
+<script>
+	
+	var task = setInterval("add()" , 10);
+	var count = 1 ;
+	
+	function add() {
+		if(count==300) {
+			window.clearInterval(task);
+		} else {
+			var loading = document.getElementById("loading");
+			loading.style.width = count+"px";
+			loading.innerHTML = Math.round(count/3)+"%";
+			count++;
+		}
+	}
+	
+</script>

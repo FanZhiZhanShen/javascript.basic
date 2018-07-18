@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>表单提交事件</title>
+	</head>
+
+	<body>
+
+		<form id="frm" action="http://www.baidu.com/s" onsubmit="aaa()">
+
+			<input id="wd" /><span id="result"></span>
+			<br>
+			<input id="age" />
+
+			<input type="submit" />
+			<!-- 提交事件的监听在  表单上 -->
+
+		</form>
+
+	</body>
+
+</html>
+
+<script>
+	window.onload = function() {
+		var frm = document.getElementById("frm");
+		//当表单提交时 , 做校验
+		frm.onsubmit = function() {
+
+			var wd = document.getElementById("wd");
+
+			if(wd.value.length < 5) {
+				var result = document.getElementById("result");
+				alert("字数不够")
+				return false;
+			}
+
+		}
+	}
+</script>

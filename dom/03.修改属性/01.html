@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<img id="photo" src="../../resouces/img/boot-logo.jpg" alt="" />
+		<br />
+		<input type="button" value="change"  id="change"/>
+		
+	</body>
+</html>
+
+<script>
+	
+	change.onclick = function() {
+		if(confirm("切换?")) {
+			console.log("换")
+			
+//			photo.src = "../../resouces/img/angular.jpg";
+//			photo.title = "";
+			photo.setAttribute("src" , "../../resouces/img/angular.jpg");
+			photo.setAttribute("title" , "angular 好强大");
+		} else {
+			console.log("不换")
+		}
+	}
+	
+</script>

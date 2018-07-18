@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="text" id="name"  value="java"/>
+		
+		<hr />
+		
+		<select id="sel">
+			
+			<option value="red">red</option>
+			<option value="blue">blue</option>
+			<option value="green">green</option>
+			
+		</select>
+		
+		<hr />
+		<p>动态生成 option </p>
+		<input type="button" value="init" id="btn" />
+		<input type="button" value="clear" id="clear" />
+		<select id="sel2"></select>
+		
+		
+	</body>
+</html>
+
+<script>
+	
+	window.onload = function() {
+		
+		var name = document.getElementById("name")
+		
+		name.onchange = function() {
+			console.log("内容改变了")
+		}
+		
+		
+		/////////////////
+		
+		
+		var sel = document.getElementById("sel");
+		sel.onchange = function() {
+			console.log( this.selectedIndex + " : "+this.value)
+			document.body.style.backgroundColor = this.value
+		}
+		
+		////////////////////
+		
+		var btn = document.getElementById("btn");
+		btn.onclick = function() {
+			var sel2 = document.getElementById("sel2");
+			
+			var o1 = new Option("red","0");
+			var o2 = new Option("blue","1")
+			var o3 = new Option("green","2")
+			
+			sel2.options.add(o1);
+			sel2.options.add(o2);
+			sel2.options.add(o3);
+			
+		}
+		
+		var clear = document.getElementById("clear");
+		clear.onclick = function() {
+			var sel2 = document.getElementById("sel2");
+			sel2.options.length = 0;
+		}
+	}
+	
+</script>

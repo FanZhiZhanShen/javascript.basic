@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>子窗口</title>
+	</head>
+	<body>
+		
+		<div id="result"></div>
+		
+		<hr />
+		
+		<input id="txt_sub"  />
+		<input type="button" id="btn_sub" value="关闭并返回" />
+		
+	</body>
+</html>
+
+<script>
+	
+	var _parent = window.opener;
+	
+	var txt_parent = _parent.document.getElementById("txt_parent")
+	
+	result.innerHTML = txt_parent.value;
+	
+	
+	btn_sub.onclick = function() {
+		
+		txt_parent.value = txt_sub.value;
+		
+		self.close();
+		
+	}
+	
+</script>

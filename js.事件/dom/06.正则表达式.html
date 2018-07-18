@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>普通按钮提交+正则</title>
+	</head>
+
+	<body>
+
+		<form id="frm">
+			email : <input id="email" name="p" tabindex="3"/><br>   <!-- tab : tabindex-->
+			identity : <input id="identity" tabindex="1"/><br> 
+			tel : <input id="tel" tabindex="2" value="请您输入电话" /><br>
+			<input type="button" name="btn" id="btn" value="提交" />
+		</form>
+
+	</body>
+
+</html>
+
+<script>
+	function isEmail(str) {
+		var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+		return reg.test(str);
+	}
+	
+	function $(id) {
+		return document.getElementById(id);
+	}
+	
+	window.onload = function() {
+		
+		
+		var identity = $("identity");
+		identity.focus();
+		
+		var tel = $("tel");
+		tel.onfocus = function() {
+			tel.value = ""
+		}
+		
+		
+		/////////////////////////////
+		//自定义 提交行为
+		var btn = $("btn");
+		btn.onclick = function() {
+			
+	
+			
+			var email = $("email");
+			
+			if(isEmail(email.value)) {
+				
+			} else {
+				console.log("error")
+				return;
+			}
+			
+			//css
+			//html
+			
+			
+			
+			var frm = $("frm");
+			
+			frm.action = "http://s.taobao.com/search"
+			
+			frm.submit();
+			
+		}
+		
+		
+	}
+	
+	
+</script>

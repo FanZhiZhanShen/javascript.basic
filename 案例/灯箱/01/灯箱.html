@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../dom/07.获取各项坐标与高宽数据/resources/common.css" />
+		<style>
+			
+			.light-box {
+				opacity: .5;
+				background: grey;
+				position: fixed;
+				left: 0;top: 0;
+			}
+			
+			.container {
+				width: 400px;
+				height: 300px;
+				box-shadow: 0px 0px 10px gray;
+				background-color : white;
+				
+				position: relative;
+				margin: 0 auto;
+				top: 30%;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		
+		<input value="login" id="btn" type="button"/>
+		
+	</body>
+</html>
+
+<script>
+	
+	var lightbox;
+	
+	
+	btn.onclick = function() {
+		createLightBox();
+		
+		lightbox.onclick = function() {
+			document.body.removeChild(this)
+		}
+	}
+	
+	function createLightBox() {
+		var h = screen.availHeight;
+		var w = screen.availWidth;
+
+		lightbox = document.createElement("div");
+		lightbox.style.width = w+"px";
+		lightbox.style.height = h+"px";
+		lightbox.className = "light-box";
+		
+		createContainer();
+		
+		document.body.appendChild(lightbox)
+		
+	}
+	
+	function createContainer() {
+		
+		var div = document.createElement("div");
+		div.className = "container";
+		
+		
+		div.onclick = function() {
+			alert("-----");
+			event.stopPropagation();
+		}
+		
+		lightbox.appendChild(div);
+	}
+	
+</script>

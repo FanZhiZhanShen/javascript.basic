@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input id="nickname" />
+		<input id="age" />
+		<input type="button" id="add" />
+		
+		<hr />
+		
+		<table id="data" ></table>
+		
+		
+	</body>
+</html>
+
+<script>
+	var count = 0;
+	add.onclick = function() {
+		
+		var n = nickname.value;
+		var a = age.value;
+	
+		var row = data.insertRow(count);
+		
+		var td1 = row.insertCell(0)
+		td1.innerHTML = n 
+		var td2 = row.insertCell(1)
+		td2.innerHTML = a
+		var td3 = row.insertCell(2)
+		td3.innerHTML = "X"
+		td3.onclick = function() {
+
+			data.firstChild.removeChild(this.parentNode)
+		}
+		
+		count++;
+	}
+	
+
+	
+	
+</script>

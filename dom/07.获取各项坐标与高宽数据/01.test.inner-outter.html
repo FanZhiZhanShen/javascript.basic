@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<link rel="stylesheet" href="resources/common.css" />
+		
+		<style>
+		
+			#d1 {
+				height: 100px; width: 100px;
+				padding: 10px;
+				border: 2px solid lightcoral;
+				margin: 10px;
+				box-shadow: 0px 0px 10px gray;
+			}
+	
+			
+		</style>
+		
+	</head>
+	<body>
+			
+			<h4>client 是元素的高宽+padding  , 不含border 和 margin 以及滚动条</h4>
+			<hr />
+			
+			<div id="d1" class="me-color1"></div>
+		
+	</body>
+</html>
+
+<script type="text/javascript" src="resources/utils.js" ></script>
+
+<script>
+	
+	console.log("d1 outter w : " + getOuterWH(d1).w + " , h : " + getOuterWH(d1).h)
+	
+	console.log("d1 inner w : " + getInnerWH(d1).w + " , h : " + getInnerWH(d1).h)
+	
+	window.onresize = function() {
+		var wh = getInnerWH(document.body);
+
+		console.log("inner[ wh + padding ]  , w:  " + wh.w + " , h : " + wh.h ) 
+	}
+	
+</script>

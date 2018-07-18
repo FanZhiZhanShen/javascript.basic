@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" id="btn" value="F5" />
+		
+		<input type="button" id="forward" value="forward" />
+		
+	</body>
+</html>
+
+<script>
+	
+	document.write( new Date())
+	
+	console.log( location.href )
+	
+	btn.onclick = function() {
+		location.reload()
+	}
+	
+	forward.onclick = function() {
+		location.href = "target.html?name=10&age=20"
+	}
+	
+</script>

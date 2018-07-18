@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+
+<script>
+	window.onload = function() {
+		f1(f2);
+		f3();
+	}
+
+	function f1(callback) {
+		console.log("F1")
+		setTimeout(function() {
+			callback()　　　
+		}, 2000);
+	}
+
+	function f2() {
+
+		console.log("F2") 
+	}
+
+	function f3() { 
+		console.log("F3")
+	}
+</script>

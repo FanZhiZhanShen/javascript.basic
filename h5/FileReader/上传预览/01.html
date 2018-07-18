@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="content-Type" content="text/html;charset=utf-8" />
+		<style>
+			#p,
+			.img,
+			img {
+				width: 200px;
+				height: 200px;
+			}
+			
+			#p {
+				border: 1px solid #000;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="p"></div>
+
+		<input id="file1" onchange="preview(this)" multiple="multiple" type="file"/>
+
+		<script>
+			function preview(file) {
+				
+//				alert(event.target.id)   //获取了 事件的发起者
+
+				if(file.files && file.files[0]) {
+
+					var reader = new FileReader();
+
+					reader.readAsDataURL(file.files[0]);
+					//当读取完毕时
+					reader.onload = function() {
+						//文件一旦开始读取，无论成功或失败，实例的 result 属性都会被填充
+						p.innerHTML = '<img src="' + event.target.result + '" />';
+					}
+				}
+			}
+		</script>
+	</body>
+
+</html>

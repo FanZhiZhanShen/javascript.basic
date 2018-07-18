@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>追加节点</title>
+	</head>
+	<body>
+		<input type="" name="content" id="content"  /><br />
+		<input type="button" name="add" id="add" value="ADD" />
+		<hr />
+		
+		<ul id="menu">
+			<li>Home</li>
+		</ul>
+		
+	</body>
+</html>
+
+<script>
+	
+	window.onload = function() {
+		
+		
+		add.onclick = function() {
+
+			var li = document.createElement("li");
+			li.innerHTML = content.value
+			
+//			var img = document.createElement("img");
+//			img.src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/bd_logo1_31bdc765.png"
+//			img.height = 100
+//			img.width =200
+//			
+//			li.appendChild(img)
+			
+			
+			menu.appendChild(li)
+			content.value = ""
+			
+		}
+	}
+	
+</script>
+
+

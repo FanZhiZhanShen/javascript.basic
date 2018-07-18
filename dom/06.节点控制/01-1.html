@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>新元素 绑定事件</title>
+	</head>
+	<body>
+		<input type="" name="content" id="content"  /><br />
+		<input type="button" name="add" id="add" value="ADD" />
+		<hr />
+		
+		<ul id="menu">
+			<li>Home</li>
+		</ul>
+		
+	</body>
+</html>
+
+<script>
+	
+	window.onload = function() {
+		
+		
+		add.onclick = function() {
+
+			var li = document.createElement("li");
+			li.innerHTML = content.value
+			
+			li.onclick = function(){
+				console.log(this.innerText)
+			}
+			
+			menu.appendChild(li)
+			content.value = ""
+			
+		}
+	}
+	
+</script>
+
+

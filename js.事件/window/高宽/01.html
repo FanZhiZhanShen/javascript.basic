@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style>
+			
+			div {
+				position: absolute;
+				width: 200px; height: 200px;
+				background-color: #ADD8E6;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		
+		<br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		
+	</body>
+</html>
+
+<script>
+	
+	window.onload = function() {
+		document.onclick = function() {
+			
+			
+			
+			var div = document.createElement("div");
+			var info = "";
+			div.style.left = event.x+"px";
+			div.style.top = (event.y + document.body.scrollTop)+"px";
+			
+			info += "event.x : "+ event.x + " . event.y : " + event.y;
+			
+			div.innerHTML = info;
+			document.body.appendChild(div)
+			
+		}
+	}
+	
+	window.onscroll = function() {
+		console.log("滚动高度 : " + document.body.scrollTop)
+	}
+	
+	window.onresize = function() {
+		console.log("可见高宽 ,  宽 : " + document.body.clientWidth + " , 高 : " + document.body.clientHeight )
+	}
+	
+</script>

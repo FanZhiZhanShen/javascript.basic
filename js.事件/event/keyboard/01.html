@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				position: fixed;
+				left: 100px; top: 100px;
+				height: 100px; width: 100px;
+				background-color: #20B2AA;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		
+		<div id="d1"></div>
+		
+	</body>
+</html>
+
+<script>
+	var count = 2;
+	window.onkeydown = function() {
+//		console.log(event.keyCode)
+//		console.log("你输入的是 :  " + String.fromCharCode(event.keyCode))
+		
+		var d1 = document.getElementById("d1");
+
+		if(event.keyCode==37) {
+
+			d1.style.left =count + "px"
+			count++
+		}
+		
+//		console.log(event.ctrlKey)
+		console.log(event.keyCode)
+//		console.log(event.altKey)
+	}
+	
+</script>

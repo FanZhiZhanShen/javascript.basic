@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				font-family: "微软雅黑";
+			}
+			
+			#preview {
+				height: 200px;
+				width: 400px;
+				display: flex;
+				flex-flow: row nowrap;
+			}
+			
+			#preview div {
+				box-shadow: 0px 0px 10px gray;
+				width: 100px;
+				height: 100px;
+				margin-right: 20px;
+				background-position: center;
+				background-size: contain;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<form id="frm">
+			<br> 
+			FirstName : <input type="text" name="first" id="first" value="" /><br><br> 
+			LastName : <input type="text" name="last" id="last" value="" /><br><br>
+			<input type="file" class="photo" id="photo" multiple="multiple" accept="image/gif, image/jpeg" /><br><br>
+			<input type="button" id="save" value="save" /><br><br>
+		</form>
+
+		<hr />
+		<div id="preview"></div>
+
+	</body>
+
+</html>
+<script>
+	//	photo.onchange = function() {
+	//		var files = this.files;
+	//		var reader = new FileReader();
+	//		for(var i = 0; i < files.length; i++) {
+	//			//			console.log(files[i].size/1024 + "KB")
+	//			console.log(files[i].toString())
+	//			reader.readAsDataURL(files[0])
+	//			reader.onload = function() {
+	//				//				preview.style.background = "url"
+	//			}
+	//		}
+	//	}
+
+	//oop
+	function Person(first , last){
+		this.first = first ; 
+		this.last = last;
+	}
+	
+
+	save.onclick = function() {
+
+		var tom = new Person( frm.first.value , frm.last.value);
+		
+		//js object - > json str
+		var json = JSON.stringify(tom) 
+//		var obj = JSON.parse(json)  // 往往是服务器推送来的JSON串   我们需要解析成 JSON对象
+		
+		//先获取本地存储对象
+		var storage = window.localStorage;
+		//存 也可能是 改
+		storage.setItem( tom.first , json);
+		
+		storage.onstorage = function(data) {
+			
+			event.preventDefault();
+			alert("")
+		}
+		
+	}
+</script>

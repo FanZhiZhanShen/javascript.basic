@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style>
+			
+			div{
+				position: fixed;
+				height: 100px; width: 100px;
+				background-color: #20B2AA;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+		
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		
+	</body>
+</html>
+<script>
+	
+	window.onload = function() {
+		
+		document.oncontextmenu = function(e) {
+			var menu = document.createElement("div");
+			
+			menu.style.left = event.x + "px"
+			menu.style.top = event.y + "px"
+			
+			document.body.appendChild(menu)
+			
+			e.preventDefault();
+//			return false;
+		}
+		
+		document.onmousedown = function() {
+			if(event.button ==0 ) {
+				console.log("左键")
+			}else if(event.button ==2 ) {
+				console.log("右键")
+			}
+		}
+		
+		
+	}
+	
+	
+	window.onscroll = function() {
+		console.log("滚动啦...")
+	}
+	
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="checkbox" value="java" name="skills" />java
+		<input type="checkbox" value="c++" name="skills"/>c++
+		<input type="checkbox" value="python" name="skills" />python
+		
+		<hr />
+		
+		<input type="button" id="btn"  value="go"/>
+		
+	</body>
+</html>
+
+<script>
+	
+	
+	var btn = document.getElementById("btn")
+	btn.onclick = function(){
+		var data = [];
+		var skills = document.getElementsByName("skills");
+		for( var i = 0; i<skills.length ; i++) {
+			if(skills[i].checked) {
+				data.push(skills[i].value);
+			}
+		}
+		
+		var str = data.join("/");
+		console.log(str)
+	}
+	
+	
+	
+</script>

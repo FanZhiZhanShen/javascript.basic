@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="resources/common.css" />
+		<style>
+			#d1 {
+				position: fixed;
+				left: 100px;
+				top: 100px;
+				width: 100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="d1" class="me-color1"></div>
+
+	</body>
+
+</html>
+<script type=" text/javascript " src="resources/utils.js "></script>
+
+<script>
+	var data = getLTRB(d1);
+	console.log(" top : " + data.left + ",  right : " + data.right + " , bottom : " + data.bottom + " , left : " + data.left )
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>onblur</title>
+	</head>
+
+	<body>
+
+		<input id="wd" /><span id="result"></span>
+		<br>
+		<input id="age" />
+
+	</body>
+
+</html>
+
+<script>
+	window.onload = function() {
+
+		var wd = document.getElementById("wd");
+
+		wd.onblur = function() {
+			if(wd.value.length < 5) {
+				var result = document.getElementById("result");
+				result.innerHTML = "<span>X</span>"
+			}
+		}
+
+	}
+</script>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../../../dom/07.获取各项坐标与高宽数据/resources/common.css" />
+		<style>
+			.light-box {
+				opacity: .5;
+				background: grey;
+				position: fixed;
+				left: 0;
+				top: 0;
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: center;
+				align-items: center;
+			}
+			
+			.container {
+				width: 400px;
+				height: 60%;
+				box-shadow: 0px 0px 10px red;
+				background-color: white;
+				overflow: scroll;
+			}
+			
+			.imgs {
+				/*background-position: 0px 0px;*/
+				background-size:400px;
+	
+				width: 100%;
+				
+				border: 2px solid blue;
+			}
+			
+			::-webkit-scrollbar {
+				display: none;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<input value="login" id="btn" type="button" />
+
+	</body>
+
+</html>
+<script type="text/javascript" src="../../../h5/tuling-robot/jquery版/jquery/jquery.js"></script>
+<script>
+	$(function() {
+
+		$("#btn").click(function() {
+			maskbox();
+		})
+
+		function maskbox() {
+
+			var lightbox = $("<div id='light-box'></div>");
+			lightbox.height(screen.availHeight)
+			lightbox.width(screen.availWidth)
+			lightbox.addClass("light-box")
+
+			lightbox.click(function() {
+				$(this).remove();
+			})
+
+			$("body").append(lightbox)
+
+			createContainer();
+
+		}
+
+		function createContainer() {
+
+			var div = $("<div></div>")
+			div.addClass("container")
+			div.click(function() {
+				event.stopPropagation();
+			})
+
+			var sub = $("<img/>")
+	
+			sub.attr("src" , "ct.jpg")
+			sub.attr("width" , "400px")
+			
+
+			div.append(sub)
+
+			$("#light-box").append(div);
+		}
+
+	})
+</script>

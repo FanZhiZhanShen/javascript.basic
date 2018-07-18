@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<input id="result" value="" />
+		<hr />
+		<input name="num" value="1" type="button" />
+		<input name="num" value="2" type="button" />
+		<input name="num" value="3" type="button" /><br>
+		<input name="num" value="4" type="button" />
+		<input name="num" value="5" type="button" />
+		<input name="num" value="6" type="button" /><br>
+		<input name="num" value="7" type="button" />
+		<input name="num" value="8" type="button" />
+		<input name="num" value="9" type="button" /><br>
+		<input name="num" value="0" type="button" /><br>
+
+		<hr />
+
+		<input name="method" value="+" type="button" />
+		<input name="method" value="-" type="button" />
+		<input name="method" value="*" type="button" />
+		<input name="method" value="/" type="button" />
+		<br>
+		<hr />
+		<input id="calcu" value="=" type="button" />
+
+	</body>
+
+</html>
+
+<script>
+	var num1 = 0,num2 = 0;
+	var type = null;
+
+	var nums = document.getElementsByName("num");
+	for(var i = 0; i < nums.length; i++) {
+		nums[i].onclick = function() {
+			if(type == null) {
+				num1 += this.value;
+			} else {
+				num2 += this.value;
+			}
+		}
+	}
+
+	var method = document.getElementsByName("method");
+	for(var i = 0; i < method.length; i++) {
+		method[i].onclick = function() {
+			type = this.value;
+			console.log("type :" + type);
+		}
+	}
+
+	var calcu = document.getElementById("calcu");
+	calcu.onclick = function() {
+
+		var result = document.getElementById("result");
+
+		num1 = parseInt(num1);
+		num2 = parseInt(num2);
+
+		switch(type) {
+			case "+":
+				result.value = num1 + num2;
+				break;
+			case "-":
+				result.value = num1 - num2;
+				break;
+			case "*":
+				result.value = num1 * num2;
+				break;
+			case "/":
+				result.value = num1 / num2;
+				break;
+			default:
+				break;
+		}
+		
+		type = null;
+		num1 =0;
+		num2=0;
+		
+	}
+</script>

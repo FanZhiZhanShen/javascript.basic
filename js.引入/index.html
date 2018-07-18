@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+
+	</head>
+
+	<body>
+
+	</body>
+
+</html>
+
+<!-- 多 js 中   全局变量共享 ,  注意使用的独立性 --> 
+<script type="text/javascript" src="index.js" ></script>
+
+
+<script>
+	
+//	
+////	alert("Hello js");
+//	
+//	console.log("Hello console");
+//	
+//	document.write("<a href='http://www.baidu.com'>baidu</a>");
+
+console.log("index.html 文件中读取 a :" + a)
+
+a = 20;
+
+console.log("invoke add method : " + add(1,1) )
+	
+</script>
+
+
+<script type="text/javascript" src="index2.js" ></script>

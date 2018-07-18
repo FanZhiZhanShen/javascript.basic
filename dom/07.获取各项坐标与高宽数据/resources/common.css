@@ -1,0 +1,16 @@
+* {
+	margin: 0;
+	padding: 0;
+	color: gray;
+	font-family: "微软雅黑";
+	font-size: 20px;
+	font-weight: 100;
+}
+
+.me-color1 {
+	background-color: #20B2AA;
+}
+
+.me-color2 {
+	background-color: #F08080;
+}

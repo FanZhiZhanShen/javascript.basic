@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>ABCDEFG</title>
+
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#wrap {
+				height: 400px;
+				width: 330px;
+				border: 1px solid red;
+				position: relative;
+			}
+			
+			.char {
+				height: 30px;
+				width: 30px;
+				border: 1px solid red;
+				position: absolute;
+				border-radius: 50%;
+				text-align: center;
+				line-height: 30px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<div id="wrap"></div>
+
+		<br />
+		<hr /><br />
+
+		<input id="start" value="start" type="button" />
+		<input id="pause" value="pause" type="button" />
+		<input id="clear" value="clear" type="button" />
+
+		<hr />
+
+		<div id="result"></div>
+
+	</body>
+
+</html>
+
+<script type="text/javascript">
+	var task_create;
+	var task_move;
+	var task_remove;
+
+	var lose = 0;
+	var score = 0;
+
+	var storage = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+	var elements = []; //用来存放所有生成的字母
+
+	window.onload = function() {
+
+	}
+
+	start.onclick = function() { //点击开始 // 调用两个循环函数
+
+		task_create = setInterval( createChar , 1000)
+		task_move = setInterval( drop , 500)
+	}
+
+	pause.onclick = function() {
+		clearInterval(task_create)
+		clearInterval(task_move)
+	}
+	clear.onclick = function() {
+		clearInterval(task_create)
+		clearInterval(task_move)
+
+		for(var i = 0; i < elements.length; i++) {
+			wrap.removeChild(elements[i])
+		}
+
+		elements.length = 0;
+	}
+
+	function createChar() {
+
+		var mini = document.createElement("div");
+		mini.className = "char";
+		mini.style.left = Math.random(100) * 300 + "px";
+		mini.style.top = "0px";
+		mini.innerText = storage[Math.round(Math.random(10) * 25)];
+		wrap.appendChild(mini)
+
+		elements.push(mini);
+	}
+
+	function drop() {
+
+		for(var i = 0; i < elements.length; i++) {
+			var curr = elements[i].style.top;  // --> "10px"  -->   number : 10
+			var value = parseInt(curr.substring(0, curr.indexOf("px")))  // "10"  -- > 10
+
+			elements[i].style.top = (value += 30) + "px";
+
+			if(value >= 300) {
+				console.log("爆炸");
+				wrap.removeChild(wrap.firstChild)
+				elements.removeByIndex(0)
+				lose++;
+			}
+
+			console.log(elements)
+			show();
+		}
+
+		window.onkeydown = function() {
+
+			var input = String.fromCharCode(event.keyCode);
+
+			var temp = [];
+
+			for(var i = 0; i < elements.length; i++) {
+				if(input == elements[i].innerText) {
+//					temp.push(elements[i])
+					wrap.removeChild(elements[i])
+					elements.removeByValue(elements[i])
+					score++;
+				}
+			}
+
+			for(var i = 0; i < temp.length; i++) {
+
+			}
+
+		}
+
+		show();
+
+	}
+
+	function show() {
+		result.innerHTML = "score : " + score + " , lose : " + lose;
+	}
+
+	Array.prototype.removeByValue = function(val) {
+		for(var i = 0; i < this.length; i++) {
+			if(this[i] == val) {
+				this.splice(i, 1);
+				break;
+			}
+		}
+	}
+
+	Array.prototype.removeByIndex = function(obj) {
+		for(var i = 0; i < this.length; i++) {
+			var temp = this[i];
+			if(!isNaN(obj)) {
+				temp = i;
+			}
+			if(temp == obj) {
+				for(var j = i; j < this.length; j++) {
+					this[j] = this[j + 1];
+				}
+				this.length = this.length - 1;
+			}
+		}
+	}
+</script>

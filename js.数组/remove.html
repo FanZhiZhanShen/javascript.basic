@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+
+<script>
+	
+	Array.prototype.remove = function(index) {
+		
+		for(var i=0 , n = 0 ; i<this.length ; i++ ) {
+			if(this[i] != this[index]) {
+				this[n++] = this[i]
+			}
+		}
+		this.length -= 1;
+		return this;
+	}
+	
+	
+	
+	
+	var arr = ['A' , 'B' , 'C' , 'D'];
+	
+	arr.remove(1)
+	console.log(arr)
+	
+	
+	var arr2 = [1,2,3,4]; 
+	delete arr2[0];
+	console.log(arr2)
+	
+	
+	
+</script>

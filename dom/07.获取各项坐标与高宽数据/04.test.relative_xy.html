@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="resources/common.css" />
+		<style>
+			#d1 {
+				width: 100px;
+				height: 100px;
+				margin: 0 auto;
+				position: relative;
+			}
+			
+			#d2 {
+				height: 200px;
+				width: 200px;
+				margin: 0 auto;
+				position: relative;
+			}
+			
+			#d3 {
+				width: 100px;
+				height: 100px;
+				margin: 0 auto;
+				position: absolute;
+				left: 100px;
+				top: 100px;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		
+		<h4>相对于父元素的绝对位置</h4>
+
+		<div id="d1" class="me-color1"></div>
+
+		<hr />
+
+		<div id="d2" class="me-color2">
+			<div id="d3" class="me-color1"></div>
+		</div>
+		
+	</body>
+</html>
+<script type=" text/javascript " src="resources/utils.js "></script>
+
+<script>
+	
+	console.log("d1 , x : " + getRelativeXY(d1).x + " , y : " + getRelativeXY(d1).y )
+
+	console.log("d3 , x : " + getRelativeXY(d3).x + " , y : " + getRelativeXY(d3).y )
+	
+</script>

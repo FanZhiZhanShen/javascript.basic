@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#wrap {
+				height: 300px;
+				width: 300px;
+				border: solid #FFB6C1 1px;
+				overflow: scroll;
+				
+				color: grey;
+				font-family: "微软雅黑";
+			}
+			
+			::-webkit-scrollbar {
+				display: none;
+			}
+			
+			.size {
+				max-width: 80%;
+				min-height: 30px;
+			}
+			
+			.left {
+				float: left;
+				background-color: #ADD8E6;
+			}
+			
+			.right {
+				float: right;
+				background-color: whitesmoke;
+				text-align: right;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div id="wrap"></div>
+		<input type="text" id="content" />
+		<input type="button" id="btn" value="send" />
+
+	</body>
+
+</html>
+<script type="text/javascript" src="../../tuling-robot/jquery版/jquery/jquery.js" ></script>
+
+<script>
+	$(function() {    
+
+		var key = "b7f3afeea99c40c7a9df742f64551105";
+		var url = "http://www.tuling123.com/openapi/api";
+
+		$('#btn').click(function() {
+			
+			var info = {
+				"key": key,
+				"info": $("#content").val()   // = content.value
+			}
+			
+			var self = $("<div class='right size'></div><br>")
+			self.html( $("#content").val())   //   div.innerHTML = xxxx
+			$("#wrap").append(self)
+			
+
+			$.ajax({
+				type: "POST",
+				url: url,
+				data: info,
+				dataType: "json",
+				success: function(result) {
+					var robot = $("<div class='left size'></div><br>")
+					robot.html(result.text) 
+					$("#wrap").append(robot)
+				
+				}
+			});
+
+		})
+
+	})
+</script>

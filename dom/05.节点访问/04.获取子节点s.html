@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<ul id="u1">
+			<li>A</li>
+			<li>B</li>
+			<li>C</li>
+		</ul>
+
+		<hr />
+
+		<ul id="u2">
+			<li>A</li>
+			<li>B</li>
+			<li>C</li>
+		</ul>
+
+	</body>
+
+</html>
+<script>
+	
+		u1.onclick = function() {
+			alert("")
+		}
+
+		var elements1 = u1.childNodes;
+		console.log(elements1.length)
+		
+		elements1.onclick = function() {
+			alert("a")
+		}
+
+		var elements2 = u2.childNodes;
+		console.log(elements2.length)
+
+		var elements3 = u2.children;
+		console.log(elements3.length);
+
+</script>

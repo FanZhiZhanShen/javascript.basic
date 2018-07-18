@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<img id="image" height="200px" width="200px" alt="nothing" src="1.jpg">
+
+	</body>
+
+</html>
+
+<script>
+	var index = 2;
+
+	function loadImg() {
+		if(index == 4) index = 1;
+		image.src = index + ".jpg"
+		index++;
+	}
+
+	var task
+	window.onload = function() {
+		task = setInterval("loadImg()", 1000);
+	}
+
+	image.onmouseover = function() {
+		//		console.log("鼠标过来了..")
+		window.clearInterval(task)
+	}
+	image.onmouseout = function() {
+		//		console.log("鼠标离开了..")
+		task = setInterval("loadImg()", 1000);
+	}
+</script>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#wrap {
+				box-shadow: 0px 0px 2px gray;
+				margin: 0 auto;
+				width: 800px;
+				display: flex;
+				flex-flow: row wrap;
+				/*justify-content: space-around;*/
+				position: relative;
+				overflow: visible;
+			}
+			
+			.item {
+				background-color: #FFA07A;
+				height: 60px;
+				width: 60px;
+				border-radius: 50%;
+				box-shadow: 0px 0px 10px gainsboro;
+				margin: 20px;
+				text-align: center;
+				line-height: 60px;
+				color: darkblue;
+				font-family: "微软雅黑";
+				font-size: 20px;
+				position: relative;
+			}
+			
+			#header {
+				display: flex;
+				flex-flow: row nowrap;
+				justify-content: flex-end;
+				height: 50px;
+			}
+			
+			#cart {
+				width: 300px;
+				height: 40px;
+				background-color: #20B2AA;
+				box-shadow: 0px 0px 9px lightgray;
+				position: relative;
+			}
+			
+			#cart:hover {
+				box-shadow: 0px 0px 8px lightgray inset;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<div id="header">
+
+			<div id="cart">
+
+			</div>
+		</div>
+
+		<div id="wrap">
+			<div class="item">A</div>
+			<div class="item">B</div>
+			<div class="item">C</div>
+			<div class="item">D</div>
+			<div class="item">E</div>
+			<div class="item">F</div>
+			<div class="item">G</div>
+			<div class="item">H</div>
+			<div class="item">I</div>
+			<div class="item">J</div>
+			<div class="item">K</div>
+			<div class="item">L</div>
+			<div class="item">M</div>
+			<div class="item">N</div>
+			<div class="item">O</div>
+			<div class="item">P</div>
+			<div class="item">Q</div>
+		</div>
+
+	</body>
+
+</html>
+
+<script>
+	var cart_x;
+	var cart_y;
+
+	var target_x;
+	var target_y;
+
+	var task_move;
+
+	window.onload = function() {
+		getCartXY()
+	}
+
+	var items = document.getElementsByClassName("item");
+	for(var i = 0; i < items.length; i++) {
+		items[i].onclick = function() {
+			getTargetXY(this)
+			move(this)
+		}
+	}
+
+	function getCartXY() {
+		cart_x = cart.offsetLeft
+		cart_y = cart.offsetTop
+	}
+
+	function getTargetXY() {
+		target_x = event.target.offsetLeft
+		target_y = event.target.offsetTop
+	}
+
+	function move(obj) {
+		obj.style.position = "relative"
+		obj.style.transform = "translate(" + (parseInt(cart_x) - parseInt(target_x) - 300 - 60) + "px ,"
+		+ (parseInt(cart_y) - parseInt(target_y) - 60) 
+		+"px) scale(.5) translateZ(1px)";
+		
+	}
+	
+	
+	
+</script>

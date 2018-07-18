@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<input type="button" id="btn" value="click me : )  " />
+		
+	</body>
+</html>
+
+<script>
+	
+	var a = 10;
+	
+	window.onload = function(){
+		console.log("初始化....匿名函数")
+	}
+	
+	function $(id) {
+		return document.getElementById( id );	
+	}
+	
+	var btn = $("btn");
+	btn.onclick = function(){
+		console.log("单击了我 : " + a);
+	}
+	btn.ondblclick = function() {
+		var a = 20;
+		console.log("点这么多下  要干嘛 ? : " + a)
+	}
+	
+
+	
+
+</script>

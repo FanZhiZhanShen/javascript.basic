@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script>
+	var uri = "my test.jsp?name=ståle&car=saab";
+	console.log(encodeURI(uri))
+	
+	
+	var result = "my%20test.jsp?name=st%C3%A5le&car=saab";
+	console.log(decodeURI(result))
+</script>

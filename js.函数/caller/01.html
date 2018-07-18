@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script>
+	var a = function() {
+		alert(a.caller);
+	}
+	var b = function() {
+		a();
+	}
+	b();
+</script>

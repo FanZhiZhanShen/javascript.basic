@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="button" value="停止" onclick="end()"/>
+		
+	</body>
+
+</html>
+<script>
+	var t = setTimeout( "task()" , 3000);  
+	
+	function task() {
+//		console.log(new Date().getSeconds())
+//		setTimeout( "task()" , 1000);
+		console.log("hahahaha")
+	}
+	
+	function end(){
+		window.clearTimeout(t);
+	}
+	
+</script>

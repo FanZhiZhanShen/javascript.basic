@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+
+		<input id="btn" value="获取当前位置" type="button"/><hr />
+		
+		<textarea id=content rows="30" cols="30">
+			
+			
+		</textarea>
+	</body>
+
+</html>
+<script>
+	btn.onclick = function() {
+		alert("OK1")
+		navigator.geolocation.getCurrentPosition(function(position) {
+			alert("OK2")
+			content.value += "\n 当前经度：" + position.coords.longitude;
+			content.value += "\n 当前纬度：" + position.coords.latitude;
+			content.value += '\n 准确度：' + position.coords.accuracy;
+			content.value += '\n 海拔：' + position.coords.altitude;
+			content.value += '\n 海拔准确度：' + position.coords.altitudeAccuracy;
+			content.value += '\n 行进方向：' + position.coords.heading;
+			
+			
+		}, function(error) {
+			alert(error.code);
+		},/* {
+			enableHighAcuracy: true,
+			timeout: 10000,
+			maximumAge: 10000
+		}*/ false);
+	}
+</script>

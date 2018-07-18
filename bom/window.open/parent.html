@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>父窗口</title>
+	</head>
+	<body>
+		<input type="text" id="txt_parent" />
+		<input type="button" value="打开子页面" id="btn" />
+		
+	</body>
+</html>
+<script>
+	
+	btn.onclick = function() {
+		window.open("sub.html","_blank" ,"height=300,width=300 ,left=300px,top=200px, menubar=yes,titlebar=yes,scrollbar=no,toolbar=no, status=yes,location=no")
+	}
+	
+</script>

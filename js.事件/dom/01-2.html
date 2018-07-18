@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<a id="a1" href="http://www.baidu.com">haha</a>
+	</body>
+</html>
+<script>
+	
+	var a1 = document.getElementById("a1");
+	
+	a1.onclick = function( e ) {
+		console.log("123123")
+		
+		e.preventDefault() //阻止控件原有的默认行为
+	}
+	
+	
+	
+</script>

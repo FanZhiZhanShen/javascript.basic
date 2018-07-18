@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+	</body>
+
+</html>
+
+<script>
+	
+	//开辟子线程
+	var worker = new Worker('sub.js');  
+	
+	//与子线程的通信
+	worker.onmessage = function(event) { 
+		console.log("主线程收到的信息 : " + event.data);
+	};
+	
+	//向子线程发送信息
+	worker.postMessage("begin");  
+
+
+	//setTimeout(function () {  }, 1000);
+</script>

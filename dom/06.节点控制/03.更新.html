@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>更新节点</title>
+	</head>
+	<body>
+		<input type="" name="content" id="content"  /><br />
+		<input type="button" name="update" id="update" value="update" />
+		<hr />
+		
+		<ul id="menu">
+			<li>HomeA</li>
+			<li id="b">HomeB</li>
+			<li>HomeC</li>
+			<li>HomeD</li>
+		</ul>
+		
+	</body>
+</html>
+
+<script>
+	
+	window.onload = function() {
+		
+		
+		update.onclick = function() {
+
+			var li = document.createElement("li");
+			li.innerHTML = content.value
+			
+			menu.replaceChild(li , b)
+
+			content.value = ""
+			
+		}
+	}
+	
+</script>
+
+

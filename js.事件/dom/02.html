@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<!-- 点击事件  -->
+		<input type="button"  id="btn" value="click me"   />
+		
+	</body>
+</html>
+<script>
+	
+	window.onload = function() {
+		btn.onclick = function() {
+			console.log(this.value)
+		}
+		
+		btn.onmouseover = function() {
+			console.log("鼠标过来了")
+		}
+	}
+	
+</script>

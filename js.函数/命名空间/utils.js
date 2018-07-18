@@ -1,0 +1,3 @@
+var common = window.common || {};
+
+
